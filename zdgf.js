@@ -20,7 +20,7 @@ if (actId && actId.length < 26) {
     $.done()
 }
 
-var notifyText = `export jd_zdjr_activityUrl="${actUrl}"\nexport jd_zdjr_activityId="${actId}"\n`
+var notifyText = `env jd_zdjr_activityUrl="${actUrl}"\nenv jd_zdjr_activityId="${actId}"\n`
 
 console.log(`\n\n${notifyText}`)
 
@@ -50,7 +50,7 @@ function getQueryString(qStr, name) {
     return null;
 }
 
-function update(body) {
+/*unction update(body) {
     text = `${body}`
     let opt = {
         url: `https://rw.akyakya.workers.dev/msg`,
@@ -59,7 +59,7 @@ function update(body) {
             "Content-Type": "application/x-www-form-urlencoded",
         },
         timeout: 10000,
-    };
+    };*/
     return new Promise(resolve => {
         $.post(opt, (err, resp, data) => {
             try {
